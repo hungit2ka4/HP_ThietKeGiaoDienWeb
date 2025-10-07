@@ -4,20 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog Nhóm 1</title>
+
+  <!-- ✅ Liên kết thư viện Bootstrap CSS (phiên bản 5.3) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- ✅ Thư viện icon Bootstrap (bi-...) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <!-- ✅ File CSS tự viết -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- 🌟 Navbar -->
+<!-- 🌟 NAVBAR - Thanh điều hướng -->
+<!-- 
+  .navbar: kích hoạt thành phần thanh điều hướng của Bootstrap
+  .navbar-expand-lg: menu chỉ thu gọn (collapse) khi màn hình nhỏ hơn kích thước "large" (≥992px thì hiển thị đầy đủ)
+  .navbar-dark: chữ và icon màu sáng (thường dùng cho nền tối)
+  .bg-dark: nền màu tối (đen)
+  .shadow-sm: tạo bóng nhẹ bên dưới navbar
+  .fixed-top: giữ thanh navbar cố định ở đầu trang khi cuộn
+-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm fixed-top">
-  <div class="container">
+  <div class="container"> <!-- .container: căn giữa nội dung và giới hạn độ rộng -->
+
+    <!-- .navbar-brand: tên/logo của website -->
     <a class="navbar-brand fw-bold" href="index.html">Nhóm 1 Blog</a>
+
+    <!-- Nút bật/tắt menu khi ở chế độ mobile -->
+    <!-- .navbar-toggler: nút mở menu trên màn hình nhỏ -->
+    <!-- data-bs-toggle="collapse": dùng JS của Bootstrap để ẩn/hiện phần menu -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span> <!-- Icon 3 gạch -->
     </button>
+
+    <!-- Khu vực chứa menu -->
+    <!-- .collapse .navbar-collapse: menu có thể thu gọn -->
     <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- .navbar-nav: danh sách item trong navbar -->
+      <!-- .ms-auto: margin-start tự động -> đẩy menu sang phải -->
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link active" href="index.html">Trang chủ</a></li>
         <li class="nav-item"><a class="nav-link" href="post.html">Bài viết</a></li>
@@ -25,38 +50,58 @@
         <li class="nav-item"><a class="nav-link" href="contact.html">Liên hệ</a></li>
       </ul>
     </div>
+
   </div>
 </nav>
 
-<!-- 🌈 Hero -->
+<!-- 🌈 HERO SECTION (Trang chào mừng) -->
+<!-- 
+  d-flex: sử dụng Flexbox
+  align-items-center: căn giữa theo chiều dọc
+  text-white: chữ trắng
+  text-center: căn giữa chữ
+-->
 <header class="hero-home d-flex align-items-center text-white text-center">
   <div class="container">
     <h1 class="display-3 fw-bold mb-3">Chào mừng đến với Blog Nhóm 1</h1>
     <p class="lead mb-4">Nơi chia sẻ kiến thức, kinh nghiệm & dự án học tập của chúng tôi</p>
+    <!-- .btn .btn-lg: nút lớn -->
+    <!-- .px-4: padding ngang -->
     <a href="post.html" class="btn btn-gradient btn-lg px-4">Khám phá Bài Viết</a>
   </div>
 </header>
 
-<!-- 📰 Bài Viết Mới -->
+<!-- 📰 BÀI VIẾT NỔI BẬT -->
 <section class="container py-5">
+  <!-- py-5: padding dọc lớn -->
   <div class="text-center mb-5">
     <h2 class="fw-bold">📰 Bài viết nổi bật</h2>
     <p class="text-muted">Tổng hợp các bài chia sẻ mới nhất từ nhóm</p>
   </div>
 
+  <!-- .row: chia hàng -->
+  <!-- .g-4: khoảng cách giữa các cột -->
   <div class="row g-4">
-    <!-- Post 1 -->
+    
+    <!-- Mỗi bài viết là một .col (cột) -->
+    <!-- col-md-6: chiếm 6/12 cột khi màn hình ≥768px -->
+    <!-- col-lg-3: chiếm 3/12 cột khi màn hình ≥992px -->
     <div class="col-md-6 col-lg-3">
+      <!-- .card: khung chứa nội dung kiểu thẻ -->
+      <!-- .h-100: chiều cao bằng nhau -->
+      <!-- .shadow-sm: đổ bóng nhẹ -->
       <div class="card post-card h-100 shadow-sm">
         <img src="/image/team.jpeg" class="card-img-top" alt="Team">
         <div class="card-body">
           <h5 class="card-title">Giới Thiệu Thành Viên</h5>
           <p class="card-text">Tìm hiểu về 4 thành viên và vai trò trong nhóm...</p>
+          <!-- .stretched-link: làm cho toàn bộ thẻ <div> trở thành vùng nhấp -->
           <a href="post.html#post1" class="stretched-link text-gradient fw-semibold">Đọc thêm</a>
         </div>
       </div>
     </div>
-    <!-- Post 2 -->
+
+    <!-- Lặp lại cấu trúc tương tự cho các bài viết khác -->
     <div class="col-md-6 col-lg-3">
       <div class="card post-card h-100 shadow-sm">
         <img src="image/work.jpeg" class="card-img-top" alt="Work">
@@ -67,7 +112,7 @@
         </div>
       </div>
     </div>
-    <!-- Post 3 -->
+
     <div class="col-md-6 col-lg-3">
       <div class="card post-card h-100 shadow-sm">
         <img src="/image/blog.jpeg" class="card-img-top" alt="Blog">
@@ -78,7 +123,7 @@
         </div>
       </div>
     </div>
-    <!-- Post 4 -->
+
     <div class="col-md-6 col-lg-3">
       <div class="card post-card h-100 shadow-sm">
         <img src="/image/future.jpeg" class="card-img-top" alt="Future">
@@ -89,27 +134,32 @@
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- 🌟 About Team -->
+<!-- 🌟 PHẦN GIỚI THIỆU NHÓM -->
 <section class="bg-light py-5">
+  <!-- bg-light: nền màu sáng xám nhạt -->
   <div class="container text-center">
     <h2 class="fw-bold mb-4">💡 Về Nhóm 1</h2>
     <p class="lead text-muted mx-auto" style="max-width:700px">
-      Nhóm 1 là tập hợp những bạn trẻ đam mê lập trình, thiết kế và sáng tạo nội dung.
-      Mục tiêu của chúng tôi là xây dựng một blog học tập bổ ích, chia sẻ kiến thức và
-      lan toả cảm hứng đến cộng đồng sinh viên.
+      Nhóm 1 là tập hợp những bạn trẻ đam mê lập trình, thiết kế và sáng tạo nội dung...
     </p>
     <a href="member.html" class="btn btn-gradient mt-3 px-4">Gặp gỡ các thành viên</a>
   </div>
 </section>
 
-<!-- 🔗 Footer -->
+<!-- 🔗 FOOTER -->
 <footer class="bg-dark text-white text-center py-4">
+  <!-- bg-dark: nền tối -->
+  <!-- text-white: chữ trắng -->
+  <!-- text-center: căn giữa -->
+  <!-- py-4: padding dọc -->
   <div class="container">
     <p class="mb-1">&copy; 2025 Nhóm 1 Blog. All rights reserved.</p>
     <div>
+      <!-- Icon mạng xã hội (dùng Bootstrap Icons) -->
       <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
       <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
       <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
@@ -117,6 +167,7 @@
   </div>
 </footer>
 
+<!-- ✅ Bootstrap JS (bundle gồm cả Popper) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

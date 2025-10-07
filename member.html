@@ -1,53 +1,157 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+  <!-- 
+    🌐 Khai báo thông tin cơ bản của tài liệu HTML:
+    - lang="vi": ngôn ngữ là tiếng Việt.
+    - <meta charset="UTF-8">: mã hóa ký tự Unicode.
+    - <meta name="viewport"...>: giúp giao diện hiển thị đúng trên điện thoại (responsive).
+  -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thành viên - Blog Nhóm 1</title>
+
+  <!-- 
+    ✅ Kết nối thư viện Bootstrap CSS:
+    Giúp bạn sử dụng hệ thống lưới (Grid), màu sắc, button, navbar, typography, v.v.
+  -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- 
+    ✅ Kết nối thư viện Bootstrap Icons:
+    Cho phép dùng icon như <i class="bi bi-facebook"></i>, <i class="bi bi-twitter"></i>, v.v.
+  -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <!-- 
+    ✅ File CSS riêng của bạn (style.css):
+    Dùng để ghi đè (customize) lại các thành phần Bootstrap hoặc thêm hiệu ứng, màu sắc riêng.
+  -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <!-- Navbar -->
+  <!-- 
+    🌟 THANH ĐIỀU HƯỚNG (NAVBAR)
+    --------------------------------
+    Dùng để tạo menu cố định trên đầu trang.
+    Bootstrap có sẵn class để làm thanh điều hướng tự co giãn.
+  -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <!-- 
+      .container: Giữ nội dung nằm giữa màn hình, giới hạn độ rộng.
+      Nếu bỏ container, navbar sẽ trải dài toàn màn hình.
+    -->
     <div class="container">
+
+      <!-- 
+        .navbar-brand: Phần logo hoặc tên thương hiệu nằm bên trái navbar.
+        .fw-bold: chữ in đậm.
+      -->
       <a class="navbar-brand fw-bold" href="index.html">Nhóm 1 Blog</a>
+
+      <!-- 
+        Nút hiện/ẩn menu trên thiết bị nhỏ (mobile).
+        .navbar-toggler: tạo nút menu.
+        data-bs-toggle="collapse": Bootstrap JS sẽ bật/tắt nội dung menu khi click.
+      -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span> <!-- Biểu tượng 3 gạch (hamburger icon). -->
       </button>
+
+      <!-- 
+        Phần menu điều hướng (ẩn/hiện khi nhấn nút ở mobile).
+        .collapse + .navbar-collapse: vùng nội dung có thể thu gọn/mở rộng.
+      -->
       <div class="collapse navbar-collapse" id="navbarNav">
+
+        <!-- 
+          .navbar-nav: nhóm các mục điều hướng.
+          .ms-auto: (margin-start auto) đẩy menu sang bên phải.
+        -->
         <ul class="navbar-nav ms-auto">
+
+          <!-- Mỗi <li> là một mục trong menu -->
+          <!-- .nav-item: phần tử menu -->
+          <!-- .nav-link: liên kết (a) trong menu -->
+          <!-- .active: đánh dấu mục đang được chọn -->
           <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
           <li class="nav-item"><a class="nav-link" href="post.html">Bài viết</a></li>
           <li class="nav-item"><a class="nav-link active" href="member.html">Thành viên</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Liên hệ</a></li>
+
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Hero -->
+  <!-- 
+    🌈 HERO SECTION (Phần tiêu đề giới thiệu trang)
+    -------------------------------------------------
+    Giới thiệu chung về trang “Thành viên”.
+    Sử dụng class Bootstrap để căn giữa, tạo khoảng cách, định dạng chữ.
+  -->
   <section class="hero-member text-center py-5">
+    <!-- .text-center: căn giữa toàn bộ nội dung -->
+    <!-- .py-5: padding trên và dưới lớn (khoảng cách đều nhau) -->
     <div class="container">
+      <!-- .fw-bold: chữ đậm -->
+      <!-- .display-5: cỡ chữ lớn hơn bình thường -->
+      <!-- .mb-2: margin-bottom nhỏ -->
       <h1 class="fw-bold display-5 mb-2">✨ Thành Viên Nhóm 1 ✨</h1>
+
+      <!-- .lead: đoạn mô tả nổi bật (Bootstrap tự định nghĩa cỡ chữ nhẹ và to hơn) -->
+      <!-- .text-muted: màu chữ xám nhẹ -->
       <p class="lead text-muted">Những gương mặt tạo nên Blog Nhóm 1</p>
     </div>
   </section>
 
-  <!-- Member Grid -->
+  <!-- 
+    👥 GRID THÀNH VIÊN (Danh sách các thành viên trong nhóm)
+    -----------------------------------------------------------
+    Dùng hệ thống Grid của Bootstrap để chia bố cục thành các cột responsive.
+  -->
   <section class="py-5">
+    <!-- .py-5: padding dọc (trên & dưới) -->
     <div class="container">
+      <!-- 
+        .row: chứa các cột (col-)
+        .g-4: khoảng cách (gutter) giữa các cột là 1.5rem (theo Bootstrap).
+        .justify-content-center: căn giữa các cột trong hàng.
+      -->
       <div class="row g-4 justify-content-center">
 
+        <!-- 🧑 Thành viên 1 -->
+        <!-- 
+          col-12: chiếm 12/12 cột trên màn hình rất nhỏ (điện thoại).
+          col-sm-6: chia 2 cột khi màn hình ≥576px.
+          col-lg-3: chia 4 cột khi màn hình ≥992px.
+          => Responsive tự động thay đổi bố cục theo kích thước thiết bị.
+        -->
         <div class="col-12 col-sm-6 col-lg-3">
+          <!-- 
+            .text-center: căn giữa chữ.
+            .p-4: padding 4 đơn vị (1.5rem * 4).
+            .shadow-sm: đổ bóng nhẹ xung quanh thẻ.
+            .member-card: class tùy chỉnh (định nghĩa trong style.css).
+          -->
           <div class="member-card text-center p-4 shadow-sm">
+            <!-- 
+              .mx-auto: căn giữa hình ảnh theo chiều ngang.
+              .member-img: class tùy chỉnh (có thể đặt width, border-radius,...).
+            -->
             <img src="image/Hung.jpg" alt="Hoàng Việt Hùng" class="member-img mx-auto">
+
+            <!-- .fw-bold: chữ in đậm -->
+            <!-- .mt-3 .mb-1: margin trên và dưới -->
             <h5 class="fw-bold mt-3 mb-1">Hoàng Việt Hùng</h5>
+
+            <!-- .mb-0: bỏ margin dưới -->
             <p class="member-role mb-0">💻 Lập trình viên</p>
           </div>
         </div>
 
+        <!-- 🧑 Thành viên 2 -->
         <div class="col-12 col-sm-6 col-lg-3">
           <div class="member-card text-center p-4 shadow-sm">
             <img src="image/Ly.jpg" alt="Nguyễn Khánh Ly" class="member-img mx-auto">
@@ -56,6 +160,7 @@
           </div>
         </div>
 
+        <!-- 🧑 Thành viên 3 -->
         <div class="col-12 col-sm-6 col-lg-3">
           <div class="member-card text-center p-4 shadow-sm">
             <img src="image/TuanAnh.jpg" alt="Đinh Tuấn Anh" class="member-img mx-auto">
@@ -64,6 +169,7 @@
           </div>
         </div>
 
+        <!-- 🧑 Thành viên 4 -->
         <div class="col-12 col-sm-6 col-lg-3">
           <div class="member-card text-center p-4 shadow-sm">
             <img src="image/Hiep.jpg" alt="Nguyễn Đức Hiệp" class="member-img mx-auto">
@@ -76,13 +182,29 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- 
+    🔗 CHÂN TRANG (FOOTER)
+    --------------------------
+    Dùng để hiển thị thông tin bản quyền, liên kết, hoặc mạng xã hội.
+  -->
   <footer class="bg-dark text-white py-3">
+    <!-- 
+      .bg-dark: nền màu đen/xám đậm.
+      .text-white: chữ màu trắng.
+      .py-3: padding trên và dưới 1rem.
+    -->
     <div class="container text-center">
+      <!-- .text-center: căn giữa nội dung -->
+      <!-- .mb-0: bỏ khoảng cách dưới của đoạn văn -->
       <p class="mb-0">&copy; 2025 Nhóm 1 Blog. All rights reserved.</p>
     </div>
   </footer>
 
+  <!-- 
+    ✅ Bootstrap JavaScript Bundle
+    ------------------------------
+    Chứa Popper.js + các tính năng JS của Bootstrap (navbar, collapse, modal, v.v.)
+  -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

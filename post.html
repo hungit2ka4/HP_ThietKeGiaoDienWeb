@@ -4,20 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bài viết - Blog Nhóm 1</title>
+
+  <!-- ✅ Bootstrap CSS: Thư viện giao diện giúp tạo layout, navbar, card... nhanh chóng -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- ✅ Bootstrap Icons: Thư viện biểu tượng (icon) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <!-- ✅ File CSS riêng để chỉnh sửa giao diện thêm -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Navbar -->
+  <!-- 🧭 Navbar (Thanh điều hướng trên cùng) -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+    <!-- container: căn giữa nội dung theo chiều ngang -->
     <div class="container">
+      <!-- navbar-brand: logo hoặc tên thương hiệu -->
       <a class="navbar-brand fw-bold" href="index.html">Nhóm 1 Tạo Blog</a>
+
+      <!-- navbar-toggler: nút menu thu gọn khi ở màn hình nhỏ (mobile) -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
+
+      <!-- collapse navbar-collapse: phần menu có thể ẩn/hiện -->
       <div class="collapse navbar-collapse" id="navbarNav">
+        <!-- ms-auto: căn sang phải -->
         <ul class="navbar-nav ms-auto">
+          <!-- nav-item & nav-link: từng mục trong menu -->
           <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
           <li class="nav-item"><a class="nav-link active" href="post.html">Bài viết</a></li>
           <li class="nav-item"><a class="nav-link" href="member.html">Thành viên</a></li>
@@ -27,27 +41,33 @@
     </div>
   </nav>
 
-  <!-- Hero -->
+  <!-- 🎯 Hero Section (Phần tiêu đề nổi bật) -->
   <section class="hero">
     <div class="container text-center">
+      <!-- display-4: chữ lớn, fw-bold: chữ đậm -->
       <h1 class="display-4 fw-bold">📚 Danh Sách Bài Viết</h1>
+      <!-- lead: kiểu chữ mô tả nhẹ, to hơn văn bản bình thường -->
       <p class="lead">Các chia sẻ nổi bật từ Nhóm 1</p>
     </div>
   </section>
 
-  <!-- Blog Posts -->
-  <section class="py-5">
+  <!-- 📝 Danh sách bài viết -->
+  <section class="py-5"><!-- py-5: padding dọc (trên/dưới) -->
     <div class="container">
-      <div class="row row-cols-1 row-cols-md-2 g-4">
+      <!-- row-cols-1 row-cols-md-2: 1 cột ở mobile, 2 cột ở màn hình trung bình trở lên -->
+      <div class="row row-cols-1 row-cols-md-2 g-4"><!-- g-4: khoảng cách giữa các cột -->
 
-        <!-- Bài 1 -->
+        <!-- 📄 Bài viết 1 -->
         <div class="col">
           <div class="card shadow-sm h-100">
+            <!-- card-img-top: ảnh trên cùng của card -->
             <img src="/image/team.jpeg" class="card-img-top" alt="Giới Thiệu Thành Viên">
             <div class="card-body">
               <h5 class="card-title fw-bold">Giới Thiệu Thành Viên</h5>
               <p class="card-text">Nhóm 1 gồm 4 thành viên với các vai trò rõ ràng, cùng hợp tác để hoàn thiện dự án blog này.</p>
+              <!-- Nút mở Modal (popup) -->
               <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#post1Modal">Đọc thêm</button>
+              <!-- badge: thẻ nhãn nhỏ để đánh dấu chủ đề -->
               <div class="mt-2">
                 <span class="badge bg-primary">#Team</span>
                 <span class="badge bg-info text-dark">#GiớiThiệu</span>
@@ -56,7 +76,7 @@
           </div>
         </div>
 
-        <!-- Bài 2 -->
+        <!-- 📄 Bài viết 2 -->
         <div class="col">
           <div class="card shadow-sm h-100">
             <img src="/image/work.jpeg" class="card-img-top" alt="Quá Trình Làm Việc">
@@ -72,7 +92,7 @@
           </div>
         </div>
 
-        <!-- Bài 3 -->
+        <!-- 📄 Bài viết 3 -->
         <div class="col">
           <div class="card shadow-sm h-100">
             <img src="/image/blog.jpeg" class="card-img-top" alt="Ý Nghĩa Của Blog">
@@ -88,7 +108,7 @@
           </div>
         </div>
 
-        <!-- Bài 4 -->
+        <!-- 📄 Bài viết 4 -->
         <div class="col">
           <div class="card shadow-sm h-100">
             <img src="/image/future.jpeg" class="card-img-top" alt="Định Hướng Tương Lai">
@@ -108,12 +128,15 @@
     </div>
   </section>
 
-  <!-- Modal Bài viết 1 -->
+  <!-- 💬 Modal (hộp thoại hiển thị chi tiết bài viết) -->
+  <!-- Modal bài viết 1 -->
   <div class="modal fade" id="post1Modal" tabindex="-1" aria-hidden="true">
+    <!-- modal-dialog: khung hiển thị, modal-lg: kích thước lớn, modal-dialog-scrollable: cuộn được -->
     <div class="modal-dialog modal-lg modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Giới Thiệu Thành Viên</h5>
+          <!-- btn-close: nút đóng modal -->
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
@@ -129,7 +152,7 @@
     </div>
   </div>
 
-  <!-- Modal Bài viết 2 -->
+  <!-- Modal bài viết 2 -->
   <div class="modal fade" id="post2Modal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-scrollable">
       <div class="modal-content">
@@ -150,7 +173,7 @@
     </div>
   </div>
 
-  <!-- Modal Bài viết 3 -->
+  <!-- Modal bài viết 3 -->
   <div class="modal fade" id="post3Modal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-scrollable">
       <div class="modal-content">
@@ -171,7 +194,7 @@
     </div>
   </div>
 
-  <!-- Modal Bài viết 4 -->
+  <!-- Modal bài viết 4 -->
   <div class="modal fade" id="post4Modal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-scrollable">
       <div class="modal-content">
@@ -192,10 +215,11 @@
     </div>
   </div>
 
-  <!-- Footer -->
+  <!-- ⚙️ Footer (Chân trang) -->
   <footer>
     <div class="container text-center">
       <p>&copy; 2025 Nhóm 1 Blog. All rights reserved.</p>
+      <!-- Icon mạng xã hội -->
       <div>
         <a href="#"><i class="bi bi-facebook me-3"></i></a>
         <a href="#"><i class="bi bi-twitter me-3"></i></a>
@@ -204,6 +228,7 @@
     </div>
   </footer>
 
+  <!-- ✅ Bootstrap JS: giúp các thành phần động (navbar, modal, collapse...) hoạt động -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
